@@ -25,7 +25,7 @@ export class TranslationService {
     try {
       const langs = ['en', 'fr', 'es'];
       for (const lang of langs) {
-        const translations = await this.http.get<Translations>(`/assets/i18n/${lang}.json`).toPromise();
+        const translations = await this.http.get<Translations>(`assets/i18n/${lang}.json`).toPromise();
         if (translations) {
           this.translations[lang] = translations;
         }
