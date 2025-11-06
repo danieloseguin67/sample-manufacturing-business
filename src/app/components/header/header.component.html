@@ -1,0 +1,41 @@
+<header>
+  <div class="container">
+    <div class="logo">
+      <h1>{{ 'HEADER.TITLE' | translate }}</h1>
+    </div>
+    
+    <!-- Burger Menu Button -->
+    <button class="burger-menu" (click)="toggleMenu()" [class.active]="menuOpen" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <!-- Navigation -->
+    <nav [class.mobile-open]="menuOpen">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">{{ 'HEADER.HOME' | translate }}</a>
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">{{ 'HEADER.ABOUT' | translate }}</a>
+      <a routerLink="/products" routerLinkActive="active" (click)="closeMenu()">{{ 'HEADER.PRODUCTS' | translate }}</a>
+      <a routerLink="/industries" routerLinkActive="active" (click)="closeMenu()">{{ 'HEADER.INDUSTRIES' | translate }}</a>
+      <a routerLink="/capabilities" routerLinkActive="active" (click)="closeMenu()">{{ 'HEADER.CAPABILITIES' | translate }}</a>
+      <a routerLink="/sustainability" routerLinkActive="active" (click)="closeMenu()">{{ 'HEADER.SUSTAINABILITY' | translate }}</a>
+      <a routerLink="/careers" routerLinkActive="active" (click)="closeMenu()">{{ 'HEADER.CAREERS' | translate }}</a>
+      <a routerLink="/blog" routerLinkActive="active" (click)="closeMenu()">{{ 'HEADER.BLOG' | translate }}</a>
+      <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">{{ 'HEADER.CONTACT' | translate }}</a>
+      <a routerLink="/portal" routerLinkActive="active" (click)="closeMenu()">{{ 'HEADER.PORTAL' | translate }}</a>
+      
+      <!-- Language Switcher in Mobile Menu -->
+      <div class="mobile-language-switcher">
+        <app-language-switcher></app-language-switcher>
+      </div>
+    </nav>
+    
+    <!-- Desktop Language Switcher -->
+    <div class="desktop-language-switcher">
+      <app-language-switcher></app-language-switcher>
+    </div>
+  </div>
+  
+  <!-- Overlay for mobile menu -->
+  <div class="menu-overlay" [class.active]="menuOpen" (click)="closeMenu()"></div>
+</header>

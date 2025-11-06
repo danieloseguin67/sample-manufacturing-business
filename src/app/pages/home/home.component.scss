@@ -1,0 +1,340 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 20px;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #1a2533 0%, #2c3e50 100%);
+  color: white;
+  margin: -2rem -20px 3rem;
+  padding: 5rem 20px;
+  
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  .tagline {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+  .btn {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    
+    &.btn-primary {
+      background-color: #e74c3c;
+      color: white;
+      
+      &:hover {
+        background-color: #c0392b;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+    }
+    
+    &.btn-secondary {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+      
+      &:hover {
+        background-color: white;
+        color: #2c3e50;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+.capabilities-preview,
+.industries-preview {
+  margin-top: 3rem;
+  
+  h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 2.5rem;
+    font-weight: bold;
+  }
+  
+  p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+}
+
+/* Carousel Styles */
+.carousel-container {
+  display: block; /* Always show carousel */
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 0 60px; /* Space for arrows on desktop */
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 1.5rem; /* Space between cards */
+  
+  .capability-card {
+    flex-shrink: 0;
+    padding: 0 0.75rem; /* Internal spacing */
+  }
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  
+  &:hover {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  &.prev {
+    left: 0;
+  }
+  
+  &.next {
+    right: 0;
+  }
+  
+  svg {
+    color: #2c3e50;
+  }
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1.5rem;
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #e74c3c;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0;
+    
+    &.active {
+      background: #e74c3c;
+      transform: scale(1.2);
+    }
+    
+    &:hover {
+      background: rgba(231, 76, 60, 0.5);
+    }
+  }
+}
+
+/* Hide the old grid - we only use carousel now */
+.capabilities-grid {
+  display: none;
+}
+
+.capability-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 4px solid #e74c3c;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    border-left-width: 6px;
+  }
+  
+  h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  
+  p {
+    color: #666;
+    line-height: 1.6;
+    text-align: left;
+  }
+}
+
+/* Tablet (768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .container {
+    padding: 1.5rem 30px;
+  }
+  
+  .hero {
+    padding: 3.5rem 20px;
+    margin: -1.5rem -30px 2.5rem;
+    
+    h1 {
+      font-size: 2.5rem;
+    }
+    
+    .tagline {
+      font-size: 1.15rem;
+    }
+  }
+  
+  .capabilities-preview h2,
+  .industries-preview h2 {
+    font-size: 2rem;
+  }
+  
+  .carousel-container {
+    padding: 0 50px;
+  }
+  
+  .capability-card {
+    padding: 2rem;
+    
+    h3 {
+      font-size: 1.4rem;
+    }
+    
+    p {
+      font-size: 1.05rem;
+    }
+  }
+}
+
+/* Mobile (below 768px) */
+@media (max-width: 767px) {
+  .container {
+    padding: 1rem 15px;
+  }
+  
+  .hero {
+    padding: 2.5rem 15px;
+    margin: -1rem -15px 2rem;
+    
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .tagline {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+    
+    .btn {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.95rem;
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+  
+  .capabilities-preview,
+  .industries-preview {
+    margin-top: 2rem;
+    
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    p {
+      font-size: 1rem;
+      padding: 0 10px;
+    }
+  }
+  
+  .carousel-container {
+    padding: 0 45px;
+  }
+  
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    
+    &.prev {
+      left: 0;
+    }
+    
+    &.next {
+      right: 0;
+    }
+    
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  .capability-card {
+    padding: 1.5rem;
+    
+    h3 {
+      font-size: 1.2rem;
+    }
+    
+    p {
+      font-size: 0.95rem;
+    }
+  }
+}

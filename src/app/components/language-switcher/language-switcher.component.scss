@@ -1,0 +1,36 @@
+.language-switcher {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.lang-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  &.active {
+    background: #3498db;
+    border-color: #3498db;
+    font-weight: bold;
+  }
+}
+
+/* Mobile (below 768px) */
+@media (max-width: 767px) {
+  .lang-btn {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.6rem;
+  }
+}
