@@ -32,7 +32,10 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build -- --configuration production --base-href /sample-manufacturing-business/
+        run: npm run build -- --configuration production --base-href /
+
+      - name: Copy CNAME
+        run: cp src/CNAME dist/manufacturing-business/browser/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
